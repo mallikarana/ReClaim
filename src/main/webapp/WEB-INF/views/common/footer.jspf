@@ -1,0 +1,14 @@
+<%-- Shared page footer --%>
+</main>
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__brand">
+            <img src="${ctx}/assets/img/logo.svg" alt="" width="24" height="24">
+            <span><b>ReClaim</b> · Campus Lost &amp; Found for Graphic Era University</span>
+        </div>
+        <div class="footer__meta">MCA Major Project · Team Vision</div>
+    </div>
+</footer>
+<script src="${ctx}/assets/js/app.js"></script>
+</body>
+</html>

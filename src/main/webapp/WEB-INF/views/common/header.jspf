@@ -1,0 +1,64 @@
+<%-- Shared page header: <head>, navigation bar and flash message.
+     Pages set "pageTitle" and "activeNav" before including this file. --%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ReClaim - the Lost &amp; Found platform for Graphic Era University">
+    <title><c:out value="${pageTitle}"/> · ReClaim</title>
+    <link rel="icon" type="image/svg+xml" href="${ctx}/assets/img/logo.svg">
+    <link rel="stylesheet" href="${ctx}/assets/css/style.css">
+</head>
+<body class="${empty bodyClass ? '' : bodyClass}">
+<header class="navbar">
+    <div class="container navbar__inner">
+        <a class="brand" href="${ctx}/">
+            <img src="${ctx}/assets/img/logo.svg" alt="" width="32" height="32">
+            <span>Re<b>Claim</b></span>
+        </a>
+        <c:choose>
+            <c:when test="${not empty authUser}">
+                <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+                    <ui:icon name="menu" size="22"/>
+                </button>
+                <nav class="navbar__links" data-nav>
+                    <a href="${ctx}/dashboard" class="${activeNav == 'dashboard' ? 'active' : ''}"><ui:icon name="home" size="16"/> Dashboard</a>
+                    <a href="${ctx}/report?type=lost" class="${activeNav == 'report-lost' ? 'active' : ''}"><ui:icon name="help" size="16"/> Report Lost</a>
+                    <a href="${ctx}/report?type=found" class="${activeNav == 'report-found' ? 'active' : ''}"><ui:icon name="package" size="16"/> Report Found</a>
+                    <a href="${ctx}/items" class="${activeNav == 'browse' ? 'active' : ''}"><ui:icon name="search" size="16"/> Browse</a>
+                    <a href="${ctx}/my-reports" class="${activeNav == 'my-reports' ? 'active' : ''}"><ui:icon name="list" size="16"/> My Reports</a>
+                    <a href="${ctx}/matches" class="${activeNav == 'matches' ? 'active' : ''}"><ui:icon name="zap" size="16"/> Matches</a>
+                    <div class="navbar__user">
+                        <a href="${ctx}/profile" class="navbar__profile ${activeNav == 'profile' ? 'active' : ''}" title="My profile">
+                            <span class="avatar avatar--sm"><c:out value="${authUser.initials}"/></span>
+                            <span class="navbar__name"><c:out value="${authUser.firstName}"/></span>
+                        </a>
+                        <form action="${ctx}/logout" method="post" class="inline-form">
+                            <ui:csrf/>
+                            <button type="submit" class="btn btn--ghost btn--sm" title="Log out"><ui:icon name="logout" size="16"/> <span>Logout</span></button>
+                        </form>
+                    </div>
+                </nav>
+            </c:when>
+            <c:otherwise>
+                <nav class="navbar__links navbar__links--guest">
+                    <a href="${ctx}/login" class="${activeNav == 'login' ? 'active' : ''}">Log in</a>
+                    <a href="${ctx}/register" class="btn btn--primary btn--sm">Create account</a>
+                </nav>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</header>
+
+<main class="page">
+<c:if test="${not empty sessionScope.flash}">
+    <div class="container">
+        <div class="alert alert--${sessionScope.flash.type}" role="status">
+            <ui:icon name="${sessionScope.flash.type == 'success' ? 'check' : (sessionScope.flash.type == 'error' ? 'alert' : 'info')}"/>
+            <span><c:out value="${sessionScope.flash.message}"/></span>
+            <button type="button" class="alert__close" aria-label="Dismiss" data-dismiss><ui:icon name="x" size="16"/></button>
+        </div>
+    </div>
+    <c:remove var="flash" scope="session"/>
+</c:if>

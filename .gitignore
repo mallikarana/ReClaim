@@ -1,0 +1,24 @@
+# Build output
+target/
+
+# Local portable tools (Tomcat) - downloaded, not source
+.tools/
+
+# Local database credentials - never commit (copy db.properties.example)
+src/main/resources/db.properties
+
+# Uploaded images (runtime data)
+uploads/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+Thumbs.db
+.DS_Store
+
+# Local backup of previous Git history
+.git-old/
