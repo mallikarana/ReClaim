@@ -110,3 +110,7 @@ Planned next (not built yet; don't build early unless asked):
 - Never commit secrets (`db.properties` is git-ignored). Demo password `Demo@2026` is only for sample data.
 - Don't change the architecture or stack without discussing it with the product owner first.
 - Work only inside `D:\ReClaim`.
+
+### Matching Score Interpretation
+
+ReClaim uses rule-based weighted scoring to compare lost and found item reports. The score is expressed as a percentage out of 100, with higher scores indicating a stronger match based on the attributes being compared. The score breakdown helps users understand which attributes contributed to a potential match. A high score indicates a potential match, not confirmation that the items are identical.
