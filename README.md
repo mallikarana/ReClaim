@@ -43,8 +43,14 @@ See [DEVELOPER_GUIDE.md](DEVELOPER_GUIDE.md) for the package layout, conventions
    ```bash
    scripts\setup-database.cmd sample
    ```
-3. Create the application's DB account: edit the password in `database/create_app_user.sql`, then run it as root.
-4. Copy `src/main/resources/db.properties.example` to `db.properties` and enter the same password.
+3. Create the application's database account:
+   - Open `database/create_app_user.sql` and replace both occurrences of `CHANGE_ME_PASSWORD` with a password of your choice.
+   - Run the script as the MySQL root user.
+
+4. Configure the application:
+   - Copy `src/main/resources/db.properties.example` to `src/main/resources/db.properties`.
+   - Enter the same database username and password in `db.properties`.
+   - Do not commit `db.properties`; it contains local credentials and is excluded by `.gitignore`.
 
 ## Run
 ```bash
