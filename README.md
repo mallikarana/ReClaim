@@ -8,6 +8,10 @@ MCA Major Project · Team Vision: Kartik Maithani (lead), Mallika Rana, Dev Para
 
 **Stack:** Java · JSP · Jakarta Servlets · JSTL · JDBC · MySQL · Apache Tomcat 10.1 · MVC · JavaBeans · Maven
 
+## Project Objective
+
+The objective of ReClaim is to provide a centralized platform for reporting, searching, and recovering lost belongings within the university campus. The application uses rule-based matching to help users identify potentially related lost and found reports, making the recovery process more organized and efficient.
+
 ## Features (current milestone)
 | Module | What works |
 |---|---|
