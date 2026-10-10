@@ -82,6 +82,18 @@ Password for all: `Demo@2026`
 7. Show the rows in MySQL (phpMyAdmin → `reclaim_db` → `items`, `users`: passwords are hashed).
 8. **Log out**, try opening `/dashboard` (you're redirected to login), then **log in** again.
 
+## Testing
+
+ReClaim includes JUnit 5 unit tests for matching scores, text similarity, password utilities, input validation, and image detection.
+
+To run the unit tests, execute:
+
+```bash
+scripts/build.cmd
+```
+
+The test results can be reviewed in the Maven build output.
+
 ## Project structure
 ```
 database/            schema.sql, create_app_user.sql, sample_data.sql
