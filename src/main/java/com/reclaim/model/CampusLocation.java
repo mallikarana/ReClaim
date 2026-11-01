@@ -6,17 +6,25 @@ package com.reclaim.model;
  * free-text detail ("2nd floor, near the lift") in Item.locationDetails.
  */
 public enum CampusLocation {
-    MAIN_GATE("Main Gate / Security"),
-    ACADEMIC_BLOCK("Academic Block / Classrooms"),
-    COMPUTER_LAB("Computer Labs"),
-    LIBRARY("Library"),
-    CAFETERIA("Cafeteria / Food Court"),
-    AUDITORIUM("Auditorium / Seminar Hall"),
-    ADMIN_BLOCK("Administrative Block"),
-    SPORTS_COMPLEX("Sports Ground / Gym"),
-    HOSTEL("Hostel"),
-    PARKING("Parking Area"),
-    TRANSPORT("Bus Stop / University Transport"),
+    MAIN_GATE("GEU Main gate : 1"),
+    MAIN_GATE_2("GEU Main gate : 2"),
+    CS_IT_GATE("GEU CS/IT Gate"),
+    ACADEMIC_BLOCK("CS/IT Block"),
+    COMPUTER_LAB("Param Lab"),
+    LIBRARY("Digital Library"),
+    CAFETERIA("Ravi Canteen"),
+    AUDITORIUM("Happiness Hut"),
+    ADMIN_BLOCK("Admin Block/ BTech Block"),
+    SPORTS_COMPLEX("Badminton Court"),
+    HOSTEL("Old MCA Block"),
+    PARKING("BasketBall Court"),
+    TRANSPORT("Quick Bites"),
+    CHANAKYA_BLOCK("Chanakya Block"),
+    KP_NAUTIYAL_BLOCK("K.P.Nautiyal Block"),
+    MECHANICAL_BLOCK("Mechanical Block"),
+    CIVIL_BLOCK("Civil Block"),
+    PARAM_LAB("Param Lab"),
+    ARYABHATTA_LAB("Aryabhatta Lab"),
     OTHER("Other (see details)");
 
     private final String label;
