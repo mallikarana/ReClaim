@@ -104,7 +104,7 @@
         <section class="card form-section">
             <h2 class="form-section__title"><span class="form-section__num">3</span> Describe it</h2>
             <div class="field ${not empty errors.description ? 'has-error' : ''}">
-                <label for="description">Description <span class="req">*</span></label>
+                <label for="description">Description <span class="optional">(minimum 10 characters)</span> <span class="req">*</span></label>
                 <textarea id="description" name="description" rows="5" required minlength="10" maxlength="1000" data-counter
                           placeholder="Brand, model, stickers, scratches, contents... anything that helps identify it."><c:out value="${form.description}"/></textarea>
                 <div class="field__row">
